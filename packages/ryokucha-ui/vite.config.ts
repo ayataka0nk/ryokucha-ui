@@ -5,22 +5,28 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ include: ["./src/lib", "./src/vite-env.d.ts"], insertTypesEntry: true })],
+  plugins: [
+    react(),
+    dts({ include: ["./lib", "./src/vite-env.d.ts"], insertTypesEntry: true }),
+  ],
   css: {
     modules: {
       scopeBehaviour: "local",
-    }
+    },
   },
   build: {
     copyPublicDir: false,
     lib: {
-      entry: resolve(__dirname, "src/lib/index.ts"),
+      entry: resolve(__dirname, "./lib/index.ts"),
       name: "index",
       formats: ["es", "umd"],
       fileName: "index",
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: {
+        react: "React",
+        "react-dom": "ReactDOM",
+      },
     },
   },
 });
