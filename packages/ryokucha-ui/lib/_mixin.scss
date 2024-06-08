@@ -1,0 +1,38 @@
+$breakpoints: (
+  'medium': 'screen and (min-width: 600px)',
+  'expanded': 'screen and (min-width: 840px)',
+  'large': 'screen and (min-width: 1200px)',
+  'extra-large': 'screen and (min-width: 1600px)'
+) !default;
+
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin variable-surfaces {
+  .surface {
+    background-color: var(--md-sys-color-surface);
+  }
+
+  .surface-container-lowest {
+    background-color: var(--md-sys-color-surface-container-lowest);
+  }
+
+  .surface-container-low {
+    background-color: var(--md-sys-color-surface-container-low);
+  }
+
+  .surface-container {
+    background-color: var(--md-sys-color-surface-container);
+  }
+
+  .surface-container-high {
+    background-color: var(--md-sys-color-surface-container-high);
+  }
+
+  .surface-container-highest {
+    background-color: var(--md-sys-color-surface-container-highest);
+  }
+}

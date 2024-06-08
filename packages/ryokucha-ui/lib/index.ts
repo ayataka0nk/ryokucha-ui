@@ -1,4 +1,5 @@
-import "./reset.css";
-import { Button } from "./Button/Button";
+import './reset.css'
+import './global.css'
+import { Button } from './Button/Button'
 
-export { Button };
+export { Button }

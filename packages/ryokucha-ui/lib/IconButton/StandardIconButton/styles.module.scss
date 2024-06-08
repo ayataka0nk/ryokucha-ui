@@ -1,0 +1,106 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: bottom;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  &:focus-visible {
+    outline: none;
+  }
+  &:hover {
+    .icon-wrapper-enabled {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        opacity: 0.08;
+        border-radius: 100%;
+        background-color: var(--md-sys-color-on-surface-variant);
+      }
+    }
+  }
+  &:focus-visible {
+    .icon-wrapper-enabled {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        opacity: 0.1;
+        border-radius: 100%;
+        background-color: var(--md-sys-color-on-surface-variant);
+        outline: none;
+      }
+    }
+  }
+
+  &:active {
+    .icon-wrapper-enabled {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        opacity: 0.1;
+        border-radius: 100%;
+        background-color: var(--md-sys-color-on-surface-variant);
+      }
+    }
+  }
+  &:active {
+    .icon-wrapper-enabled-ripple {
+      &::before {
+        transition: opacity 0s, transform 0s;
+        transform: scale(0);
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+.icon-wrapper-enabled-ripple {
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    border-radius: 100%;
+    pointer-events: none;
+    background-color: var(--md-sys-color-on-surface-variant);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: opacity 1.2s, transform 0.3s;
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.icon-wrapper {
+  color: var(--md-sys-color-on-surface-variant);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.icon-nonactive {
+  color: var(--md-sys-color-primary);
+}
+
+.icon-active {
+  color: var(--md-sys-color-on-surface-variant);
+}

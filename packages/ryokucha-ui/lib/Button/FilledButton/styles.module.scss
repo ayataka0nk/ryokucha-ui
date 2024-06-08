@@ -1,0 +1,126 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: bottom;
+  gap: 8px;
+  overflow: hidden;
+  height: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+
+  // hover
+  &:hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0.08;
+  }
+  // active
+  &:active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0.1;
+  }
+
+  // ripple
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    border-radius: 24px;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 0.3s, opacity 2s;
+    transform: scale(1);
+    opacity: 0;
+  }
+  &:active::before {
+    transition: transform 0s, opacity 0s;
+    transform: scale(0);
+    opacity: 0.1;
+  }
+
+  // focus
+  &:focus-visible {
+    outline: none;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      opacity: 0.1;
+    }
+  }
+}
+
+.button-primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  &:hover::after {
+    background-color: var(--md-sys-color-on-primary);
+  }
+  &:active::after {
+    background-color: var(--md-sys-color-on-primary);
+  }
+  &::before {
+    background-color: var(--md-sys-color-on-primary);
+  }
+  &:focus-visible::after {
+    background-color: var(--md-sys-color-on-primary);
+  }
+}
+
+.button-secondary {
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  &:hover::after {
+    background-color: var(--md-sys-color-on-secondary);
+  }
+  &:active::after {
+    background-color: var(--md-sys-color-on-secondary);
+  }
+  &::before {
+    background-color: var(--md-sys-color-on-secondary);
+  }
+  &:focus-visible::after {
+    background-color: var(--md-sys-color-on-secondary);
+  }
+}
+
+.button-tertiary {
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  &:hover::after {
+    background-color: var(--md-sys-color-on-tertiary);
+  }
+  &:active::after {
+    background-color: var(--md-sys-color-on-tertiary);
+  }
+  &::before {
+    background-color: var(--md-sys-color-on-tertiary);
+  }
+  &:focus-visible::after {
+    background-color: var(--md-sys-color-on-tertiary);
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.with-icon {
+  padding-left: 16px;
+}

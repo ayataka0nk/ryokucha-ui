@@ -1,0 +1,16 @@
+.nav-header {
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+
+.with-icon {
+  margin-left: 0px;
+  @include media(medium) {
+    margin-left: 16px;
+  }
+}
+
+.without-icon {
+  margin-left: 28px;
+}
