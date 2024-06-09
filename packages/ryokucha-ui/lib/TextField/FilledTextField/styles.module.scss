@@ -13,9 +13,9 @@
   color: var(--md-sys-color-on-surface-variant);
 }
 
-.icon-error {
-  color: var(--md-sys-color-error);
-}
+// .icon-error {
+//   color: var(--md-sys-color-error);
+// }
 
 .input-wrapper {
   position: relative;
@@ -101,18 +101,25 @@
 }
 
 .input-error {
-  color: var(--md-sys-color-error);
+  // color: var(--md-sys-color-error);
   box-shadow: 0 1px 0 0 var(--md-sys-color-error);
+  & + .label {
+    color: var(--md-sys-color-error);
+  }
+
+  &:hover {
+    box-shadow: 0 1px 0 0 var(--md-sys-color-on-error-container);
+    & + .label {
+      color: var(--md-sys-color-on-error-container);
+    }
+  }
   &:focus {
     box-shadow: 0 2px 0 0 var(--md-sys-color-error);
+    & + .label {
+      color: var(--md-sys-color-error);
+    }
   }
   &:placeholder-shown + .label {
-    color: var(--md-sys-color-error);
-  }
-  + .label {
-    color: var(--md-sys-color-error);
-  }
-  &:focus + .label {
     color: var(--md-sys-color-error);
   }
 }
