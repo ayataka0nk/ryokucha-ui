@@ -25,6 +25,11 @@ export const NavigationDrawerStandard = () => {
           component={Link}
         />
         <NavigationDrawerItem
+          labelText="Dialog"
+          to="/dialog"
+          component={Link}
+        />
+        <NavigationDrawerItem
           labelText="TextField"
           to="/textfield"
           component={Link}

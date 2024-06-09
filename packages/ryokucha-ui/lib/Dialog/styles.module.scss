@@ -1,0 +1,27 @@
+.headline {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.supporting-text {
+  margin-bottom: 24px;
+}
+
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.dialog {
+  padding: 24px;
+  border-radius: 28px;
+  max-width: 560px;
+  min-width: 280px;
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@include variable-surfaces;

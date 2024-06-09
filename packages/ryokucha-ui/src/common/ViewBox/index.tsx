@@ -8,7 +8,7 @@ type Props = {
 export const ViewBox = ({ title, children }: Props) => {
   return (
     <section className={styles['view-box']}>
-      <h1>{title}</h1>
+      <h1 className={styles['header']}>{title}</h1>
       <div>{children}</div>
     </section>
   )
