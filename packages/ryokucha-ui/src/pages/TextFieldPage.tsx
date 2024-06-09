@@ -42,6 +42,13 @@ export const TextFieldPage = () => {
           <TextField label="Text Field" variant="outlined" />
         </ViewBlock>
         <ViewBlock>
+          <TextField
+            label="Text Field"
+            variant="outlined"
+            placeholder="With Placeholder"
+          />
+        </ViewBlock>
+        <ViewBlock>
           <TextField label="テキストフィールド" variant="outlined" />
         </ViewBlock>
         <ViewBlock>

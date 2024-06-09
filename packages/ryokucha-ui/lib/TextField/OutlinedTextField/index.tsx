@@ -36,6 +36,10 @@ export const OutlinedTextField = forwardRef<HTMLInputElement, TextFieldProps>(
             id={id}
             className={`${styles['input']} ${styles[layer]} ${
               icon ? styles['input-with-icon'] : ''
+            } ${
+              typeof placeholder === 'undefined'
+                ? styles['input-without-placeholder']
+                : ''
             } ${error ? styles['input-error'] : ''}`}
             placeholder={placeholder || ''}
             readOnly={readOnly}
