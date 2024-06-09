@@ -1,0 +1,133 @@
+.text-field {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  z-index: 1;
+  pointer-events: none;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.icon-error {
+  color: var(--md-sys-color-error);
+}
+
+.input-wrapper {
+  position: relative;
+
+  &:hover::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0.08;
+    background-color: var(--md-sys-color-on-surface);
+  }
+}
+
+//TODO: Ripple effect on click
+.input {
+  display: block;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  border-radius: 4px 4px 0 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--md-sys-color-on-surface);
+
+  box-shadow: 0 1px 0 0 var(--md-sys-color-primary);
+  &:focus {
+    box-shadow: 0 2px 0 0 var(--md-sys-color-primary);
+  }
+  &::placeholder {
+    opacity: 1;
+  }
+
+  // ラベル
+  + .label {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  // 入力なし
+  &:placeholder-shown + .label {
+    top: 16px;
+    left: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  // 入力あり
+  & + .label {
+    top: 8px;
+    left: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  &:focus + .label {
+    top: 8px;
+    left: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--md-sys-color-primary);
+  }
+}
+
+.input-with-icon {
+  padding-left: 48px;
+  &:placeholder-shown + .label {
+    left: 48px;
+  }
+  + .label {
+    left: 48px;
+  }
+  &:focus + .label {
+    left: 48px;
+  }
+}
+
+.input-error {
+  color: var(--md-sys-color-error);
+  box-shadow: 0 1px 0 0 var(--md-sys-color-error);
+  &:focus {
+    box-shadow: 0 2px 0 0 var(--md-sys-color-error);
+  }
+  &:placeholder-shown + .label {
+    color: var(--md-sys-color-error);
+  }
+  + .label {
+    color: var(--md-sys-color-error);
+  }
+  &:focus + .label {
+    color: var(--md-sys-color-error);
+  }
+}
+
+.supporting-text {
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+  padding-left: 16px;
+  height: 16px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.supporting-text-error {
+  color: var(--md-sys-color-error);
+}
+
+@include variable-surfaces;

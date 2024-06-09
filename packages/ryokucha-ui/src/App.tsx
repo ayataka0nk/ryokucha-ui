@@ -7,6 +7,8 @@ import '../lib/theme.css'
 import '../lib/global.css'
 import { AppBarPage } from './pages/AppBarPage'
 import { CardPage } from './pages/CardPage'
+import { DatePickerPage } from './pages/DatePickerPage'
+import { TextFieldPage } from './pages/TextFieldPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +19,9 @@ function App() {
         { path: '/', element: <div>Home</div> },
         { path: '/appbar', element: <AppBarPage /> },
         { path: '/button', element: <ButtonPage /> },
-        { path: '/card', element: <CardPage /> }
+        { path: '/card', element: <CardPage /> },
+        { path: '/datepicker', element: <DatePickerPage /> },
+        { path: 'textfield', element: <TextFieldPage /> }
       ]
     }
   ])

@@ -22,26 +22,7 @@ const CardComponent = <E extends React.ElementType = 'div'>({
   ...props
 }: Props<E>) => {
   const hasAction = props.onClick || props.href || props.to
-  let style = ''
-  // if (variant === 'elevated') {
-  //   style = getElevatedStyle({
-  //     hasAction: props.onClick || props.href,
-  //     bg: bg
-  //   })
-  // } else if (variant === 'filled') {
-  //   style = getFilledStyle({
-  //     hasAction: props.onClick || props.href,
-  //     bg: bg
-  //   })
-  // } else {
-  //   style = getOutlinedStyle({
-  //     bg,
-  //     hasAction: props.onClick || props.href
-  //   })
-  // }
-
   const Component = component || 'div'
-  // const bgStyle = getBackgroundStyle({variant,})
   return (
     <Component
       {...props}
