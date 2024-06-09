@@ -1,0 +1,85 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  color: var(--md-sys-color-on-surface);
+}
+
+.has-action {
+  cursor: pointer;
+  //hover
+  &:hover {
+    box-shadow: var(--md-sys-shadow-3dp);
+    &::after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      width: 100%;
+      opacity: 0.08;
+      background-color: var(--md-sys-color-on-surface);
+    }
+  }
+
+  // focus
+  &:focus-visible {
+    outline: none;
+    &::after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      width: 100%;
+      opacity: 0.1;
+      background-color: var(--md-sys-color-on-surface);
+    }
+  }
+
+  // ripple
+  &::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    width: 100%;
+    background-color: var(--md-sys-color-on-surface);
+    pointer-events: none;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 0.3s, opacity 2s;
+    transform: scale(1);
+    opacity: 0;
+  }
+  &:active::before {
+    transition: transform 0s, opacity 0s;
+    transform: scale(0);
+    opacity: 0.1;
+  }
+}
+
+.filled {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+.elevated {
+  background-color: var(--md-sys-color-surface-container-low);
+  box-shadow: var(--md-sys-shadow-1dp);
+}
+
+.outlined {
+  background-color: var(--md-sys-color-surface-container-low);
+  box-shadow: var(--md-sys-shadow-outline) var(--md-sys-color-outline);
+}
+
+.outlined.has-action {
+  box-shadow: var(--md-sys-shadow-outline) var(--md-sys-color-outline);
+  &:hover {
+    box-shadow: var(--md-sys-shadow-outline) var(--md-sys-color-outline),
+      var(--md-sys-shadow-3dp);
+  }
+}
+
+@include variable-surfaces;

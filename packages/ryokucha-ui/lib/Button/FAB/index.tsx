@@ -26,12 +26,9 @@ export const FAB = <E extends React.ElementType = 'button'>({
   const Component = component || 'button'
 
   return (
-    <Component {...props} className={`${className}`}>
-      <div
-        className={`${styles['button']} ${styles['button-' + color]} ${
-          styles['button-' + size]
-        } ${floating ? styles['floating'] : ''}`}
-      >
+    <Component {...props} className={`${styles['button']} ${styles['button-' + color]} ${
+      styles['button-' + size]
+    } ${floating ? styles['floating'] : ''}`}>
         {icon && (
           <Icon
             type={icon}
@@ -39,7 +36,6 @@ export const FAB = <E extends React.ElementType = 'button'>({
             className={styles['icon-' + size]}
           />
         )}
-      </div>
     </Component>
   )
 }

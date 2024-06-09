@@ -17,8 +17,8 @@ export const NavigationDrawerStandard = () => {
           labelText="Button"
           to="/button"
           component={Link}
-          active
         />
+        <NavigationDrawerItem labelText="Card" to="/card" component={Link} />
       </NavigationDrawerItems>
     </nav>
   )

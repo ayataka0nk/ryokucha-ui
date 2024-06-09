@@ -6,6 +6,7 @@ import '../lib/reset.css'
 import '../lib/theme.css'
 import '../lib/global.css'
 import { AppBarPage } from './pages/AppBarPage'
+import { CardPage } from './pages/CardPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -15,7 +16,8 @@ function App() {
       children: [
         { path: '/', element: <div>Home</div> },
         { path: '/appbar', element: <AppBarPage /> },
-        { path: '/button', element: <ButtonPage /> }
+        { path: '/button', element: <ButtonPage /> },
+        { path: '/card', element: <CardPage /> }
       ]
     }
   ])

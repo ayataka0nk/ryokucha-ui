@@ -1,5 +1,6 @@
 import { ExtendedFAB, FAB } from '@/Button'
 import { Button } from '@/index'
+import { ViewLine } from '../../common/ViewLine'
 
 export const ButtonPage = () => {
   return (
@@ -7,17 +8,21 @@ export const ButtonPage = () => {
       <h1>Button Page</h1>
       <div>
         <h3>Filled Buttons</h3>
-        <div>
+        <ViewLine>
           <Button variant="filled" color="primary">
             Primary
           </Button>
+        </ViewLine>
+        <ViewLine>
           <Button variant="filled" color="secondary">
             Secondary
           </Button>
+        </ViewLine>
+        <ViewLine>
           <Button variant="filled" color="tertiary">
             Tertiary
           </Button>
-        </div>
+        </ViewLine>
       </div>
       <div>
         <h3>Filled Buttons With Icon</h3>
