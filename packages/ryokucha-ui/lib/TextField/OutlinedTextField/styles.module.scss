@@ -47,15 +47,15 @@
     position: absolute;
     cursor: pointer;
     pointer-events: none;
-
-    // 入力あり
-    top: -8px;
     padding-left: 4px;
     padding-right: 4px;
     left: 16px;
+    color: var(--md-sys-color-on-surface-variant);
+
+    // まず原則としてラベルは上部表示
+    top: -8px;
     font-size: 12px;
     line-height: 16px;
-    color: var(--md-sys-color-on-surface-variant);
   }
 
   // hover
@@ -70,37 +70,46 @@
   &:focus {
     box-shadow: 0 0 0 2px var(--md-sys-color-primary);
     & + .label {
-      top: -8px;
       padding-left: 4px;
       padding-right: 4px;
       left: 16px;
-      font-size: 12px;
-      line-height: 16px;
       color: var(--md-sys-color-primary);
     }
   }
 }
 
 .input-without-placeholder {
-  // プレイスホルダーをユーザーが指定していない、かつ入力値がない場合は
-  // ラベルを中央に表示する。
-  & + .label {
-    top: 16px;
-    left: 16px;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--md-sys-color-on-surface-variant);
+  // プレイスホルダーをユーザーが指定しておらず
+  // 文字が入力されてないならラベルを中央表示
+  &:placeholder-shown {
+    & + .label {
+      top: 16px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  // その場合でもフォーカス時は上に表示
+  &:focus {
+    & + .label {
+      top: -8px;
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 }
 
 .input-with-icon {
+  // アイコンがあるときインプットフィールドの左にアイコン分のpaddingを追加
   padding-left: 48px;
+}
+
+.input-with-icon-and-without-placeholder {
+  // アイコンがあってユーザ指定のプレイスホルダーがないときは、
+  // ラベルが中央表示されるので、ラベルの左にアイコン分のpaddingを追加
   &:placeholder-shown + .label {
     left: 48px;
   }
-  & + .label {
-    left: 16px;
-  }
+  // 詳細度の関係でフォーカス字の指定を↑が上書きしてしまうので、再度指定
   &:focus + .label {
     left: 16px;
   }

@@ -68,6 +68,14 @@ export const TextFieldPage = () => {
         <ViewBlock>
           <TextField
             icon="AcademicCap"
+            label="With Trailing Icon And Placeholder"
+            variant="outlined"
+            placeholder="With Placeholder"
+          />
+        </ViewBlock>
+        <ViewBlock>
+          <TextField
+            icon="AcademicCap"
             label="With Trailing Icon And Supporting Text"
             supportingText="Supporting text Sample!!"
             variant="outlined"

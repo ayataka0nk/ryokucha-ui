@@ -8,7 +8,7 @@ export const DatePickerPage = () => {
       <h1>Date Picker Page</h1>
       <ViewBox title="Date Picker">
         <ViewBlock>
-          <DateFieldModal />
+          <DateFieldModal label="hoge" layer="surface-container-lowest" />
         </ViewBlock>
       </ViewBox>
     </div>
