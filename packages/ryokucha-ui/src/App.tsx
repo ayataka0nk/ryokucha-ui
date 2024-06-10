@@ -10,6 +10,7 @@ import { CardPage } from './pages/CardPage'
 import { DatePickerPage } from './pages/DatePickerPage'
 import { TextFieldPage } from './pages/TextFieldPage'
 import { DialogPage } from './pages/DialogPage'
+import { TimePickerPage } from './pages/TimePickerPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -23,7 +24,8 @@ function App() {
         { path: '/card', element: <CardPage /> },
         { path: '/datepicker', element: <DatePickerPage /> },
         { path: '/dialog', element: <DialogPage /> },
-        { path: '/textfield', element: <TextFieldPage /> }
+        { path: '/textfield', element: <TextFieldPage /> },
+        { path: '/timepicker', element: <TimePickerPage /> }
       ]
     }
   ])

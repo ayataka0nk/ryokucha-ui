@@ -34,6 +34,11 @@ export const NavigationDrawerStandard = () => {
           to="/textfield"
           component={Link}
         />
+        <NavigationDrawerItem
+          labelText="TimePicker"
+          to="/timepicker"
+          component={Link}
+        />
       </NavigationDrawerItems>
     </nav>
   )

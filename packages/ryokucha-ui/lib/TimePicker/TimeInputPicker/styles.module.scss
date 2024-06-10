@@ -1,0 +1,70 @@
+.time-input-picker {
+  background-color: var(--md-sys-color-surface-container-high);
+  padding: 24px;
+  border-radius: 28px;
+  width: fit-content;
+}
+
+.header {
+  margin-bottom: 20px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.input-field-box {
+  display: flex;
+}
+
+.time-separator {
+  display: inline-block;
+  font-size: 57px;
+  line-height: 64px;
+  width: 24px;
+  text-align: center;
+  letter-spacing: 0.25em;
+}
+
+.label-hour {
+  display: inline-block;
+  width: 96px;
+  margin-right: 24px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.label-minute {
+  display: inline-block;
+  width: 96px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.error-message {
+  height: 24px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--md-sys-color-error);
+}
+
+.period-selector {
+  margin-left: 12px;
+}
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock-icon {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
