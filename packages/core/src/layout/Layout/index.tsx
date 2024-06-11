@@ -1,15 +1,13 @@
 import { Outlet } from 'react-router-dom'
 import styles from './styles.module.scss'
 import { UserNavigations } from '../UserNavigation'
-import { NavigationActionType } from '../Navigation'
+import { NavigationActionType } from '@/Navigation'
 
 export const Layout = () => {
   const navigationAction: NavigationActionType = {
     icon: 'Pencil',
     labelText: 'Dummy Action',
-    onClick: () => {
-      console.log('Dummy Action')
-    }
+    href: '/button'
   }
   return (
     <div className={`${styles['root']} light`}>

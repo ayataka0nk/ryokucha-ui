@@ -1,8 +1,4 @@
-import {
-  NavigationActionType,
-  NavigationItemType,
-  NavigationProps
-} from '../types'
+import { NavigationProps } from '../types'
 import { useNavigationContext } from '../NavigationContext'
 
 import { FAB } from '@/Button'
@@ -20,11 +16,11 @@ export const NavigationRailTemplate = ({
   action,
   items,
   layer = 'surface-container',
-  ActionLinkComponent,
-  NavigationLinkComponent
+  linkPropName,
+  LinkComponent
 }: NavigationProps & {
-  ActionLinkComponent: (props: NavigationActionType) => JSX.Element
-  NavigationLinkComponent: (props: NavigationItemType) => JSX.Element
+  linkPropName: string
+  LinkComponent: React.ForwardRefExoticComponent<any>
 }) => {
   const { setIsDrawerModalOpen } = useNavigationContext()
   const handleMenuIconClick = () => {
@@ -39,13 +35,14 @@ export const NavigationRailTemplate = ({
       {action && (
         <NavigationRailActionArea>
           {action.href && (
-            // <FAB
-            //   color="secondary"
-            //   icon={action.icon}
-            //   component={Link}
-            //   to={action.href}
-            // />
-            <ActionLinkComponent {...action} />
+            <FAB
+              color="secondary"
+              icon={action.icon}
+              component={LinkComponent}
+              {...{
+                [linkPropName]: action.href
+              }}
+            />
           )}
           {action.onClick && (
             <FAB
@@ -60,7 +57,18 @@ export const NavigationRailTemplate = ({
       <NavigationRailItems>
         {items.map((item, index) => {
           if (item.href) {
-            return <NavigationLinkComponent key={index} {...item} />
+            return (
+              <NavigationRailItem
+                key={index}
+                icon={item.icon}
+                labelText={item.labelText}
+                active={item.active}
+                component={LinkComponent}
+                {...{
+                  [linkPropName]: item.href
+                }}
+              />
+            )
           } else if (item.onClick) {
             return (
               <NavigationRailItem

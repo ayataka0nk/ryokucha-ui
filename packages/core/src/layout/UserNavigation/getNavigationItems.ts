@@ -1,4 +1,4 @@
-import { NavigationItemType } from '../Navigation'
+import { NavigationItemType } from '@/Navigation'
 
 export type PageKey =
   | 'AppBar'

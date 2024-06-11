@@ -1,5 +1,5 @@
 import { useNavigationContext } from '../NavigationContext'
-import { NavigationItemType, NavigationProps } from '../types'
+import { NavigationProps } from '../types'
 import React, { MouseEventHandler } from 'react'
 import {
   NavigationDrawerItem,
@@ -12,9 +12,11 @@ export const NavigationDrawerModalTemplate = ({
   logo,
   items,
   layer = 'surface-container-low',
-  NavigationLinkComponent
+  linkPropName,
+  LinkComponent
 }: NavigationProps & {
-  NavigationLinkComponent: (props: NavigationItemType) => JSX.Element
+  linkPropName: string
+  LinkComponent: React.ForwardRefExoticComponent<any>
 }) => {
   const { isDrawerModalOpen, setIsDrawerModalOpen } = useNavigationContext()
   const handleCloseClick = () => {
@@ -37,18 +39,17 @@ export const NavigationDrawerModalTemplate = ({
           {items.map((item, index) => {
             if (item.href) {
               return (
-                // <NavigationDrawerItem
-                //   key={index}
-                //   icon={item.icon}
-                //   labelText={item.labelText}
-                //   to={item.href}
-                //   component={Link}
-                //   onClick={handleCloseClick}
-                //   active={item.active}
-                // />
-                <div onClick={handleCloseClick}>
-                  <NavigationLinkComponent key={index} {...item} />
-                </div>
+                <NavigationDrawerItem
+                  key={index}
+                  icon={item.icon}
+                  labelText={item.labelText}
+                  component={LinkComponent}
+                  onClick={handleCloseClick}
+                  active={item.active}
+                  {...{
+                    [linkPropName]: item.href
+                  }}
+                />
               )
             } else if (item.onClick) {
               const handleOnClick: MouseEventHandler<HTMLButtonElement> = (
