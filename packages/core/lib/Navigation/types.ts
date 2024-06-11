@@ -1,4 +1,5 @@
 import { IconType } from '@/Icon'
+import { Layer } from '@/types'
 import React from 'react'
 
 export type NavigationActionType = {
@@ -18,10 +19,10 @@ export type NavigationItemType = {
 }
 
 export type NavigationProps = {
-  bgClass?: string
   modalBgClass?: string
   logo: React.ReactNode
   action?: NavigationActionType
   items: NavigationItemType[]
   fabHidden?: boolean
+  layer?: Layer
 }

@@ -4,35 +4,31 @@ import {
   NavigationDrawerItem,
   NavigationDrawerItems
 } from '@/Navigation/NavigationDrawer'
-import { NavigationProps } from '../types'
+import {
+  NavigationActionType,
+  NavigationItemType,
+  NavigationProps
+} from '../types'
 import { ExtendedFAB } from '@/Button'
-import { Link } from 'react-router-dom'
 import { NavigationDrawerContainer } from '@/Navigation/NavigationDrawer/NavigationDrawerContainer'
-import { Layer } from '@/types'
 
-export const NavigationDrawerStandard = ({
+export const NavigationDrawerTemplate = ({
   logo,
   action,
   items,
-  layer = 'surface-container'
+  layer = 'surface-container',
+  ActionLinkComponent,
+  NavigationLinkComponent
 }: NavigationProps & {
-  layer?: Layer
+  ActionLinkComponent: (props: NavigationActionType) => JSX.Element
+  NavigationLinkComponent: (props: NavigationItemType) => JSX.Element
 }) => {
   return (
     <NavigationDrawerContainer layer={layer}>
       <NavigationDrawerHeader>{logo}</NavigationDrawerHeader>
       {action && (
         <NavigationDrawerActionArea>
-          {action.href && (
-            <ExtendedFAB
-              className="w-full"
-              to={action.href}
-              icon={action.icon}
-              component={Link}
-            >
-              {action.labelText}
-            </ExtendedFAB>
-          )}
+          {action.href && <ActionLinkComponent {...action} />}
           {action.onClick && (
             <ExtendedFAB
               icon={action.icon}
@@ -48,14 +44,15 @@ export const NavigationDrawerStandard = ({
         {items.map((item, index) => {
           if (item.href) {
             return (
-              <NavigationDrawerItem
-                key={index}
-                icon={item.icon}
-                labelText={item.labelText}
-                to={item.href}
-                component={Link}
-                active={item.active}
-              />
+              //   <NavigationDrawerItem
+              //     key={index}
+              //     icon={item.icon}
+              //     labelText={item.labelText}
+              //     to={item.href}
+              //     component={Link}
+              //     active={item.active}
+              //   />
+              <NavigationLinkComponent key={index} {...item} />
             )
           } else if (item.onClick) {
             return (

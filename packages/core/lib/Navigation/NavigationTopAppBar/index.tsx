@@ -1,5 +1,6 @@
 import { TopAppBar } from '@/AppBar'
 import { useNavigationContext } from '../NavigationContext'
+import styles from './styles.module.scss'
 
 type Props = {
   logo: React.ReactNode
@@ -13,7 +14,7 @@ export const NavigationTopAppBar = ({ className, logo }: Props) => {
   }
   return (
     <TopAppBar
-      className={`${className}`}
+      className={`${styles['navigation-top-app-bar']} ${className}`}
       logo={logo}
       leadingIcon="Bars3"
       onLeadingIconClick={handleLeadingIconClick}

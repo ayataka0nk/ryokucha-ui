@@ -12,7 +12,7 @@ import { TextFieldPage } from './pages/TextFieldPage'
 import { DialogPage } from './pages/DialogPage'
 import { TimePickerPage } from './pages/TimePickerPage'
 import { SearchPage } from './pages/SearchPage'
-import { NavigationContextProvider } from './layout/Navigation/NavigationContext'
+import { NavigationContextProvider } from '@/Navigation'
 
 function App() {
   const router = createBrowserRouter([
@@ -34,7 +34,6 @@ function App() {
   ])
   return (
     <NavigationContextProvider>
-      {' '}
       <RouterProvider router={router} />
     </NavigationContextProvider>
   )
