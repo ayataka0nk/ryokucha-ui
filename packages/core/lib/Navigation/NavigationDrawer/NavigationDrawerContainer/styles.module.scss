@@ -1,0 +1,12 @@
+.navigation {
+  width: 360px;
+  height: 100vh;
+  overflow-y: auto;
+
+  display: none;
+  @include media(large) {
+    display: block;
+  }
+}
+
+@include variable-surfaces;

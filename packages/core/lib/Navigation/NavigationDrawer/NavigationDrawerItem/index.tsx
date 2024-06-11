@@ -26,7 +26,9 @@ const NavigationDrawerItemComponent = <E extends ElementType = 'div'>({
       }`}
       {...props}
     >
-      {icon && <Icon variant="outline" type={icon} className="h-6 w-6 mr-3" />}
+      {icon && (
+        <Icon variant="outline" type={icon} className={styles['icon']} />
+      )}
       <p>{labelText}</p>
     </Component>
   )

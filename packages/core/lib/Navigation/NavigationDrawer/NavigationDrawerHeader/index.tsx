@@ -16,11 +16,11 @@ export const NavigationDrawerHeader = ({
 }: Props) => {
   return (
     <div
-      className={`${className} ${styles['nav-header']} ${
+      className={`${styles['nav-header']} ${
         typeof icon !== 'undefined'
           ? styles['with-icon']
           : styles['without-icon']
-      }`}
+      } ${className}`}
       {...props}
     >
       {icon && <IconButton icon={icon} onClick={onIconClick} />}

@@ -1,0 +1,42 @@
+.navigation-drawer-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+.enter {
+  transition: transform 0.2s;
+}
+
+.enter-from {
+  transform: translateX(-100%);
+}
+
+.enter-to {
+  transform: translateX(0);
+}
+
+.leave {
+  transition: transform 0.2s;
+}
+
+.leave-from {
+  transform: translateX(0);
+}
+
+.leave-to {
+  transform: translateX(-100%);
+}
+
+.navigation {
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  width: 360px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: var(--color-md-sys-surface-container-low);
+}
+
+@include variable-surfaces;

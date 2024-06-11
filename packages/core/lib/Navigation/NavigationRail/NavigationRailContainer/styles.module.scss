@@ -1,0 +1,16 @@
+.navigation-rail-container {
+  align-items: center;
+  width: 80px;
+  height: 100vh;
+  overflow-y: auto;
+
+  display: none;
+  @include media(medium) {
+    display: block;
+  }
+  @include media(large) {
+    display: none;
+  }
+}
+
+@include variable-surfaces;

@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
 import styles from './styles.module.scss'
-import { NavigationDrawerStandard } from '../Navigation'
+import { UserNavigations } from '../UserNavigation'
 
 export const Layout = () => {
   return (
     <div className={`${styles['root']} light`}>
-      <NavigationDrawerStandard />
+      <UserNavigations pageKey="AppBar" />
       <div className={styles['content']}>
         <Outlet />
       </div>
