@@ -1,6 +1,9 @@
 import { SearchBar } from '@/Search/SearchBar/SearchBar'
 import { ViewBlock } from '../../common/ViewBlock'
 import { ViewBox } from '../../common/ViewBox'
+import { SearchField } from '@/Search/SearchField'
+import { InputValueItem } from '@/Search/ViewItems/InputValueItem'
+import { HistoryItem } from '@/Search/ViewItems/HistoryItem'
 
 export const SearchPage = () => {
   return (
@@ -26,6 +29,21 @@ export const SearchPage = () => {
             handleMenuClick={() => {}}
             handleClearClick={() => {}}
           />
+        </ViewBlock>
+      </ViewBox>
+      <ViewBox title="Search Field">
+        <ViewBlock>
+          <SearchField
+            searchedValue=""
+            isViewOpen={true}
+            layer="surface"
+            onBackClick={() => {}}
+            onMenuClick={() => {}}
+            onClearClick={() => {}}
+          >
+            <InputValueItem value="" onClick={() => {}} />
+            <HistoryItem value="history sample" onClick={() => {}} />
+          </SearchField>
         </ViewBlock>
       </ViewBox>
     </div>
