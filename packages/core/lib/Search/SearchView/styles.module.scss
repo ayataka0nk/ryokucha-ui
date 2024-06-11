@@ -1,0 +1,20 @@
+.search-view {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 56px;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  padding-bottom: 16px;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+  @include media(medium) {
+    height: auto;
+    border-radius: 0 0 28px 28px;
+  }
+}
+
+.close {
+  display: hidden;
+}
+
+@include variable-surfaces;

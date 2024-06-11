@@ -11,6 +11,7 @@ import { DatePickerPage } from './pages/DatePickerPage'
 import { TextFieldPage } from './pages/TextFieldPage'
 import { DialogPage } from './pages/DialogPage'
 import { TimePickerPage } from './pages/TimePickerPage'
+import { SearchPage } from './pages/SearchPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +25,7 @@ function App() {
         { path: '/card', element: <CardPage /> },
         { path: '/datepicker', element: <DatePickerPage /> },
         { path: '/dialog', element: <DialogPage /> },
+        { path: '/search', element: <SearchPage /> },
         { path: '/textfield', element: <TextFieldPage /> },
         { path: '/timepicker', element: <TimePickerPage /> }
       ]

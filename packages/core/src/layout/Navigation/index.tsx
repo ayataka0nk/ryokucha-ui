@@ -30,6 +30,11 @@ export const NavigationDrawerStandard = () => {
           component={Link}
         />
         <NavigationDrawerItem
+          labelText="Search"
+          to="/search"
+          component={Link}
+        />
+        <NavigationDrawerItem
           labelText="TextField"
           to="/textfield"
           component={Link}
