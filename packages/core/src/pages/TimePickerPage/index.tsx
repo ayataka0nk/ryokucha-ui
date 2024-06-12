@@ -35,7 +35,7 @@ const Controlled = () => {
     >
       <TimeField
         label="controlled"
-        layer="surface-container-lowest"
+        layer="surface"
         value={value}
         onChange={(e) => {
           setValue(e.target.value)
@@ -56,7 +56,7 @@ const ControlledDefaultValue = () => {
     >
       <TimeField
         label="controlled"
-        layer="surface-container-lowest"
+        layer="surface"
         value={value}
         onChange={(e) => {
           setValue(e.target.value)
@@ -76,11 +76,7 @@ const Uncontrolled = () => {
         alert(formData.get('uncontrolled'))
       }}
     >
-      <TimeField
-        name="uncontrolled"
-        label="uncontrolled"
-        layer="surface-container-lowest"
-      />
+      <TimeField name="uncontrolled" label="uncontrolled" layer="surface" />
       <Button>submit</Button>
     </form>
   )
@@ -98,7 +94,7 @@ const UncontrolledDefaultValue = () => {
       <TimeField
         name="uncontrolled"
         label="uncontrolled"
-        layer="surface-container-lowest"
+        layer="surface"
         defaultValue="16:00"
       />
       <Button>submit</Button>
