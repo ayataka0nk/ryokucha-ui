@@ -33,6 +33,7 @@ export const SearchForm = ({
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
     setIsViewOpen(false)
+    addHistory(state.value)
     if (ref.current === null) {
       return
     }
