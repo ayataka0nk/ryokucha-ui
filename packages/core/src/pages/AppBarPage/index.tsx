@@ -1,17 +1,19 @@
 import { TopAppBar } from '@/AppBar'
+import { ViewBox } from '../../common/ViewBox'
+import { ViewBlock } from '../../common/ViewBlock'
 
 export const AppBarPage = () => {
   return (
-    <div className="grid gap-4">
-      <div className="w-96">
-        <div>
+    <div>
+      <ViewBox title="AppBar">
+        <ViewBlock>
           <TopAppBar
             leadingIcon="Bars3"
             logo="Logo Sample"
             className="bg-surface-container"
           />
-        </div>
-      </div>
+        </ViewBlock>
+      </ViewBox>
     </div>
   )
 }
