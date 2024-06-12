@@ -1,6 +1,5 @@
 .card {
   position: relative;
-  overflow: hidden;
   display: block;
   width: 100%;
   border-radius: 12px;
@@ -21,6 +20,7 @@
       width: 100%;
       opacity: 0.08;
       background-color: var(--md-sys-color-on-surface);
+      border-radius: 12px;
     }
   }
 

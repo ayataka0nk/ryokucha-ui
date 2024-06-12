@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
+import { Card } from '@/Card'
 
 type Props = {
   title: string
@@ -7,9 +8,9 @@ type Props = {
 }
 export const ViewBox = ({ title, children }: Props) => {
   return (
-    <section className={styles['view-box']}>
+    <Card layer="surface" className={styles['view-box']}>
       <h1 className={styles['header']}>{title}</h1>
       <div>{children}</div>
-    </section>
+    </Card>
   )
 }

@@ -6,7 +6,6 @@ import { ViewBox } from '../../common/ViewBox'
 export const ButtonPage = () => {
   return (
     <div>
-      <h1>Button Page</h1>
       <ViewBox title="Filled Buttons">
         <ViewLine>
           <Button variant="filled" color="primary">

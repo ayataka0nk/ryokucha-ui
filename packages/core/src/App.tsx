@@ -13,6 +13,7 @@ import { DialogPage } from './pages/DialogPage'
 import { TimePickerPage } from './pages/TimePickerPage'
 import { SearchPage } from './pages/SearchPage'
 import { NavigationContextProvider } from '@/Navigation'
+import './index.css'
 
 function App() {
   const router = createBrowserRouter([

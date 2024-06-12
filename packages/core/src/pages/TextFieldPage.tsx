@@ -5,7 +5,6 @@ import { ViewBlock } from '../common/ViewBlock'
 export const TextFieldPage = () => {
   return (
     <div>
-      <h1>TextField Page</h1>
       <ViewBox title="Filled TextField">
         <ViewBlock>
           <TextField label="Text Field" />

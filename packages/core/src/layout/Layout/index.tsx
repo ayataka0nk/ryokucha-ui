@@ -4,6 +4,7 @@ import { UserNavigations } from '../UserNavigation'
 import { NavigationActionType, NavigationTopAppBar } from '@/Navigation'
 import { Logo } from '../UserNavigation/Logo'
 import { getPageKeyFromPath } from '../UserNavigation/getNavigationItems'
+import { SinglePaneLayout } from '@/Layout/SinglePaneLayout'
 
 export const Layout = () => {
   const navigationAction: NavigationActionType = {
@@ -15,11 +16,13 @@ export const Layout = () => {
   const pageKey = getPageKeyFromPath(location.pathname)
 
   return (
-    <div className={`${styles['root']} light`}>
+    <div className={`${styles['root']}`}>
       <UserNavigations pageKey={pageKey} navigationAction={navigationAction} />
       <div className={styles['content']}>
         <NavigationTopAppBar logo={<Logo />} />
-        <Outlet />
+        <SinglePaneLayout>
+          <Outlet />
+        </SinglePaneLayout>
       </div>
     </div>
   )

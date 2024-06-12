@@ -7,8 +7,7 @@ import { useRef } from 'react'
 export const SearchPage = () => {
   return (
     <div>
-      <h1>Search Page</h1>
-      <ViewBox title="Search Bar">
+      {/* <ViewBox title="Search Bar">
         <ViewBlock>
           <SearchBar
             searchedValue=""
@@ -29,7 +28,7 @@ export const SearchPage = () => {
             handleClearClick={() => {}}
           />
         </ViewBlock>
-      </ViewBox>
+      </ViewBox> */}
       <ViewBox title="Search Field">
         {/* <ViewBlock>
           <SearchField

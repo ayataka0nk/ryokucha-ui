@@ -5,7 +5,6 @@ import { ViewBlock } from '../../common/ViewBlock'
 export const CardPage = () => {
   return (
     <div>
-      <h1>Card Page</h1>
       <ViewBox title="Filled Card">
         <ViewBlock>
           <Card variant="filled">Filled Default</Card>

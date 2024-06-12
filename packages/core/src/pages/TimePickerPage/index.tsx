@@ -7,7 +7,6 @@ import { Button } from '@/Button'
 export const TimePickerPage = () => {
   return (
     <div>
-      <h1>Time Picker Page</h1>
       <ViewBox title="Time Picker">
         <ViewBlock>
           <Controlled />
