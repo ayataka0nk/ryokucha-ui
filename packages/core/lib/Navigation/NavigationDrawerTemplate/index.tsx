@@ -56,7 +56,6 @@ export const NavigationDrawerTemplate = ({
               component: LinkComponent,
               active: item.active
             }
-            console.log(item.href)
             return <NavigationDrawerItem key={index} {...itemProps} />
           } else if (item.onClick) {
             return (
