@@ -15,14 +15,10 @@ import {
 export const NavigationRailTemplate = ({
   action,
   items,
-  layer = 'surface-container',
-  linkPropName,
-  LinkComponent
-}: NavigationProps & {
-  linkPropName: string
-  LinkComponent: React.ForwardRefExoticComponent<any>
-}) => {
-  const { setIsDrawerModalOpen } = useNavigationContext()
+  layer = 'surface-container'
+}: NavigationProps) => {
+  const { setIsDrawerModalOpen, linkPropName, LinkComponent } =
+    useNavigationContext()
   const handleMenuIconClick = () => {
     setIsDrawerModalOpen(true)
   }

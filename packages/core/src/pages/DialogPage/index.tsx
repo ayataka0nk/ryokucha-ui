@@ -1,8 +1,9 @@
 import { Button } from '@/Button'
-import { useDialog } from '@/Dialog/useDialog'
+import { Dialog } from '@/Dialog'
+import { useDialogRef } from '@/Dialog/useDialog'
 
 export const DialogPage = () => {
-  const { DialogComponent, showModal, closeModal } = useDialog()
+  const [ref, showModal, closeModal] = useDialogRef()
   return (
     <div>
       <button
@@ -12,7 +13,8 @@ export const DialogPage = () => {
       >
         Open
       </button>
-      <DialogComponent
+      <Dialog
+        ref={ref}
         headline="headaaaaa"
         supportingText="sup"
         leftButton={
@@ -20,7 +22,7 @@ export const DialogPage = () => {
             閉じる
           </Button>
         }
-      ></DialogComponent>
+      ></Dialog>
 
       <div></div>
     </div>

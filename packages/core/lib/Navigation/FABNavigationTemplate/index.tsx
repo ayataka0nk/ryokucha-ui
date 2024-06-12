@@ -2,41 +2,38 @@ import { FAB } from '@/Button'
 
 import { NavigationActionType } from '../types'
 import styles from './styles.module.scss'
+import { useNavigationContext } from '../NavigationContext'
 
 export const FABNavigationTemplate = ({
-  action,
   className,
-  ActionLinkComponent
-}: {
-  action: NavigationActionType
-  className?: string
-  ActionLinkComponent: (props: NavigationActionType) => JSX.Element
-}) => {
-  if (typeof action === 'undefined') {
-    return <></>
-  }
 
+  ...props
+}: NavigationActionType & {
+  className?: string
+}) => {
+  const { linkPropName, LinkComponent } = useNavigationContext()
   return (
     <div className={`${styles['fab-navigation']} ${className}`}>
-      {action.href && (
-        // <FAB
-        //   size="large"
-        //   color="primary"
-        //   icon="Pencil"
-        //   to={action.href}
-        //   floating
-        //   component={Link}
-        // />
-        <ActionLinkComponent {...action} />
-      )}
-      {action.onClick && (
+      {props.href && (
         <FAB
           size="large"
           color="primary"
-          icon={action.icon}
+          icon={props.icon}
+          floating
+          component={LinkComponent}
+          {...{
+            [linkPropName]: props.href
+          }}
+        />
+      )}
+      {props.onClick && (
+        <FAB
+          size="large"
+          color="primary"
+          icon={props.icon}
           floating
           type="button"
-          onClick={action.onClick}
+          onClick={props.onClick}
         />
       )}
     </div>

@@ -1,8 +1,10 @@
-import { NavigationActionType } from '@/Navigation'
-import { NavigationDrawer } from '../Navigation/NavigationDrawer'
-import { NavigationDrawerModal } from '../Navigation/NavigationDrawerModal'
+import {
+  NavigationActionType,
+  NavigationDrawerModalTemplate,
+  NavigationDrawerTemplate,
+  NavigationRailTemplate
+} from '@/Navigation'
 
-import { NavigationRail } from '../Navigation/NavigationRail'
 import { Logo } from './Logo'
 import { PageKey, getNavigationItems } from './getNavigationItems'
 
@@ -14,18 +16,18 @@ export const UserNavigations = ({ pageKey, navigationAction }: Props) => {
   const items = getNavigationItems({ pageKey: pageKey })
   return (
     <>
-      <NavigationDrawerModal
+      <NavigationDrawerModalTemplate
         layer="surface-container-low"
         logo={<Logo />}
         items={items}
       />
-      <NavigationRail
+      <NavigationRailTemplate
         layer="surface-container"
         logo={<Logo />}
         action={navigationAction}
         items={items}
       />
-      <NavigationDrawer
+      <NavigationDrawerTemplate
         layer="surface-container"
         logo={<Logo />}
         action={navigationAction}

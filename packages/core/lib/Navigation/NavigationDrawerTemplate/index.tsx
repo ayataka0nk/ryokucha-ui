@@ -8,18 +8,15 @@ import { NavigationProps } from '../types'
 import { ExtendedFAB } from '@/Button'
 import { NavigationDrawerContainer } from '@/Navigation/NavigationDrawer/NavigationDrawerContainer'
 import styles from './styles.module.scss'
+import { useNavigationContext } from '../NavigationContext'
 
 export const NavigationDrawerTemplate = ({
   logo,
   action,
   items,
-  layer = 'surface-container',
-  linkPropName,
-  LinkComponent
-}: NavigationProps & {
-  linkPropName: string
-  LinkComponent: React.ForwardRefExoticComponent<any>
-}) => {
+  layer = 'surface-container'
+}: NavigationProps) => {
+  const { linkPropName, LinkComponent } = useNavigationContext()
   return (
     <NavigationDrawerContainer layer={layer}>
       <NavigationDrawerHeader>{logo}</NavigationDrawerHeader>

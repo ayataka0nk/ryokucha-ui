@@ -1,7 +1,13 @@
-import { useCallback, useEffect, useRef } from 'react'
-import { Dialog, DialogProps } from '.'
+import React, { useCallback, useEffect, useRef } from 'react'
 
-export const useDialogState = () => {
+type ShowModal = () => void
+type CloseModal = () => void
+
+export const useDialogRef = (): [
+  React.RefObject<HTMLDialogElement>,
+  ShowModal,
+  CloseModal
+] => {
   const ref = useRef<HTMLDialogElement>(null)
   const showModal = useCallback(() => {
     if (ref.current) {
@@ -39,22 +45,5 @@ export const useDialogState = () => {
     }
   }, [])
 
-  return { ref, showModal, closeModal }
-}
-
-export const useDialog = () => {
-  const { ref, showModal, closeModal } = useDialogState()
-
-  const DialogComponent = useCallback(
-    (props: DialogProps) => {
-      return <Dialog ref={ref} {...props} />
-    },
-    [ref]
-  )
-
-  return {
-    DialogComponent,
-    showModal,
-    closeModal
-  }
+  return [ref, showModal, closeModal]
 }

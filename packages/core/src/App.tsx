@@ -1,5 +1,5 @@
 import './App.module.scss'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Layout } from './layout/Layout'
 import { ButtonPage } from './pages/ButtonPage'
 import '../lib/reset.css'
@@ -33,7 +33,7 @@ function App() {
     }
   ])
   return (
-    <NavigationContextProvider>
+    <NavigationContextProvider linkPropName="to" LinkComponent={Link}>
       <RouterProvider router={router} />
     </NavigationContextProvider>
   )

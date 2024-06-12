@@ -3,6 +3,8 @@ import React, { createContext, useContext } from 'react'
 export type NavigationContextValue = {
   isDrawerModalOpen: boolean
   setIsDrawerModalOpen: (isOpen: boolean) => void
+  linkPropName: string
+  LinkComponent: React.ForwardRefExoticComponent<any>
 }
 
 export const NavigationContext = createContext<NavigationContextValue | null>(
@@ -20,14 +22,23 @@ export const useNavigationContext = () => {
 }
 
 export const NavigationContextProvider = ({
-  children
+  children,
+  linkPropName,
+  LinkComponent
 }: {
   children: React.ReactNode
+  linkPropName: string
+  LinkComponent: React.ForwardRefExoticComponent<any>
 }) => {
   const [isDrawerModalOpen, setIsDrawerModalOpen] = React.useState(false)
   return (
     <NavigationContext.Provider
-      value={{ isDrawerModalOpen, setIsDrawerModalOpen }}
+      value={{
+        isDrawerModalOpen,
+        setIsDrawerModalOpen,
+        linkPropName,
+        LinkComponent
+      }}
     >
       {children}
     </NavigationContext.Provider>

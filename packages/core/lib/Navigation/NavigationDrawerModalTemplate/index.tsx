@@ -11,14 +11,14 @@ import {
 export const NavigationDrawerModalTemplate = ({
   logo,
   items,
-  layer = 'surface-container-low',
-  linkPropName,
-  LinkComponent
-}: NavigationProps & {
-  linkPropName: string
-  LinkComponent: React.ForwardRefExoticComponent<any>
-}) => {
-  const { isDrawerModalOpen, setIsDrawerModalOpen } = useNavigationContext()
+  layer = 'surface-container-low'
+}: NavigationProps) => {
+  const {
+    isDrawerModalOpen,
+    setIsDrawerModalOpen,
+    linkPropName,
+    LinkComponent
+  } = useNavigationContext()
   const handleCloseClick = () => {
     setIsDrawerModalOpen(false)
   }
