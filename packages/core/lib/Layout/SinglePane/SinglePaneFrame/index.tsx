@@ -4,6 +4,6 @@ import styles from './styles.module.scss'
 type Props = {
   children: React.ReactNode
 }
-export const SinglePaneLayout = ({ children }: Props) => {
+export const SinglePaneFrame = ({ children }: Props) => {
   return <div className={styles['single-pane']}>{children}</div>
 }

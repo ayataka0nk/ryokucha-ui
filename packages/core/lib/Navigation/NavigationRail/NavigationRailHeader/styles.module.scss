@@ -3,4 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: inherit;
+  //TODO スクロールで影をつける
 }

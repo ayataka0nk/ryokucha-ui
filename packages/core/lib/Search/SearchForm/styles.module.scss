@@ -1,0 +1,23 @@
+.search-form {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backdrop-filter: blur(1px);
+
+  @include media(medium) {
+    position: sticky;
+    width: auto;
+    top: 0;
+    left: auto;
+    z-index: 2;
+  }
+}
+
+.hidden-button {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,13 @@
+.double-pane-frame {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background-color: red;
+  // @include media('medium') {
+  //   // margin-right: 24px;
+  //   margin-left: 8px;
+  // }
+}
+
+@include variable-surfaces;

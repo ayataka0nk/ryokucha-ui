@@ -3,6 +3,7 @@
   width: 80px;
   height: 100vh;
   overflow-y: auto;
+  scrollbar-width: thin;
 
   display: none;
   @include media(medium) {

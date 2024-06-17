@@ -1,53 +1,27 @@
-import { SearchBar } from '@/Search/SearchBar/SearchBar'
 import { ViewBlock } from '../../common/ViewBlock'
 import { ViewBox } from '../../common/ViewBox'
 import { SearchForm } from '@/Search/SearchForm/SearchForm'
 import { useRef } from 'react'
+import { Layout } from '../../layout/Layout'
+import { SinglePaneFrame } from '@/Layout'
+import { NavigationTopAppBar } from '@/Navigation'
+import { Logo } from '../../layout/UserNavigation/Logo'
+import { SinglePaneContent } from '@/Layout/SinglePane/SinglePaneContent'
 
 export const SearchPage = () => {
   return (
-    <div>
-      {/* <ViewBox title="Search Bar">
-        <ViewBlock>
-          <SearchBar
-            searchedValue=""
-            isViewOpen={false}
-            layer="surface"
-            handleBackClick={() => {}}
-            handleMenuClick={() => {}}
-            handleClearClick={() => {}}
-          />
-        </ViewBlock>
-        <ViewBlock>
-          <SearchBar
-            searchedValue=""
-            isViewOpen={true}
-            layer="surface"
-            handleBackClick={() => {}}
-            handleMenuClick={() => {}}
-            handleClearClick={() => {}}
-          />
-        </ViewBlock>
-      </ViewBox> */}
-      <ViewBox title="Search Field">
-        {/* <ViewBlock>
-          <SearchField
-            searchedValue=""
-            isViewOpen={true}
-            layer="surface"
-            onBackClick={() => {}}
-            onMenuClick={() => {}}
-            onClearClick={() => {}}
-          >
-            <InputValueItem value="" onClick={() => {}} />
-            <HistoryItem value="history sample" onClick={() => {}} />
-          </SearchField>
-        </ViewBlock> */}
-        <ViewBlock>
-          <SearchFormSample />
-        </ViewBlock>
-      </ViewBox>
-    </div>
+    <Layout>
+      <SinglePaneFrame>
+        <NavigationTopAppBar logo={<Logo />} />
+        <SinglePaneContent>
+          <ViewBox title="Search Field">
+            <ViewBlock>
+              <SearchFormSample />
+            </ViewBlock>
+          </ViewBox>
+        </SinglePaneContent>
+      </SinglePaneFrame>
+    </Layout>
   )
 }
 

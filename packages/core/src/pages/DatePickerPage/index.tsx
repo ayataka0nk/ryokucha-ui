@@ -3,28 +3,38 @@ import { ViewBox } from '../../common/ViewBox'
 import { ViewBlock } from '../../common/ViewBlock'
 import React, { useState } from 'react'
 import { Button } from '@/Button'
+import { Layout } from '../../layout/Layout'
+import { SinglePaneFrame } from '@/Layout'
+import { NavigationTopAppBar } from '@/Navigation'
+import { Logo } from '../../layout/UserNavigation/Logo'
+import { SinglePaneContent } from '@/Layout/SinglePane/SinglePaneContent'
 
 export const DatePickerPage = () => {
   return (
-    <div>
-      <ViewBox title="Date Picker">
-        <ViewBlock>
-          <DateFieldModal label="hoge" layer="surface-container-lowest" />
-        </ViewBlock>
-        <ViewBlock>
-          <Controlled />
-        </ViewBlock>
-        <ViewBlock>
-          <ControlledDefaultValue />
-        </ViewBlock>
-        <ViewBlock>
-          <Uncontrolled />
-        </ViewBlock>
-        <ViewBlock>
-          <UncontrolledDefaultValue />
-        </ViewBlock>
-      </ViewBox>
-    </div>
+    <Layout>
+      <SinglePaneFrame>
+        <NavigationTopAppBar logo={<Logo />} />
+        <SinglePaneContent>
+          <ViewBox title="Date Picker">
+            <ViewBlock>
+              <DateFieldModal label="hoge" layer="surface-container-lowest" />
+            </ViewBlock>
+            <ViewBlock>
+              <Controlled />
+            </ViewBlock>
+            <ViewBlock>
+              <ControlledDefaultValue />
+            </ViewBlock>
+            <ViewBlock>
+              <Uncontrolled />
+            </ViewBlock>
+            <ViewBlock>
+              <UncontrolledDefaultValue />
+            </ViewBlock>
+          </ViewBox>
+        </SinglePaneContent>
+      </SinglePaneFrame>
+    </Layout>
   )
 }
 

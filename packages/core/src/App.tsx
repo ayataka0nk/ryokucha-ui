@@ -1,6 +1,5 @@
 import './App.module.scss'
 import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { Layout } from './layout/Layout'
 import { ButtonPage } from './pages/ButtonPage'
 import '../lib/reset.css'
 import '../lib/theme.css'
@@ -14,12 +13,12 @@ import { TimePickerPage } from './pages/TimePickerPage'
 import { SearchPage } from './pages/SearchPage'
 import { NavigationContextProvider } from '@/Navigation'
 import './index.css'
+import { DoublePanePage } from './pages/DoublePanePage'
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '',
-      element: <Layout />,
       children: [
         { path: '/', element: <div>Home</div> },
         { path: '/appbar', element: <AppBarPage /> },
@@ -29,7 +28,8 @@ function App() {
         { path: '/dialog', element: <DialogPage /> },
         { path: '/search', element: <SearchPage /> },
         { path: '/textfield', element: <TextFieldPage /> },
-        { path: '/timepicker', element: <TimePickerPage /> }
+        { path: '/timepicker', element: <TimePickerPage /> },
+        { path: '/doublepane', element: <DoublePanePage /> }
       ]
     }
   ])

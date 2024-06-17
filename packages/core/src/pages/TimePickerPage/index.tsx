@@ -3,25 +3,35 @@ import { ViewBlock } from '../../common/ViewBlock'
 import { ViewBox } from '../../common/ViewBox'
 import { useState } from 'react'
 import { Button } from '@/Button'
+import { Layout } from '../../layout/Layout'
+import { SinglePaneFrame } from '@/Layout'
+import { NavigationTopAppBar } from '@/Navigation'
+import { Logo } from '../../layout/UserNavigation/Logo'
+import { SinglePaneContent } from '@/Layout/SinglePane/SinglePaneContent'
 
 export const TimePickerPage = () => {
   return (
-    <div>
-      <ViewBox title="Time Picker">
-        <ViewBlock>
-          <Controlled />
-        </ViewBlock>
-        <ViewBlock>
-          <ControlledDefaultValue />
-        </ViewBlock>
-        <ViewBlock>
-          <Uncontrolled />
-        </ViewBlock>
-        <ViewBlock>
-          <UncontrolledDefaultValue />
-        </ViewBlock>
-      </ViewBox>
-    </div>
+    <Layout>
+      <SinglePaneFrame>
+        <NavigationTopAppBar logo={<Logo />} />
+        <SinglePaneContent>
+          <ViewBox title="Time Picker">
+            <ViewBlock>
+              <Controlled />
+            </ViewBlock>
+            <ViewBlock>
+              <ControlledDefaultValue />
+            </ViewBlock>
+            <ViewBlock>
+              <Uncontrolled />
+            </ViewBlock>
+            <ViewBlock>
+              <UncontrolledDefaultValue />
+            </ViewBlock>
+          </ViewBox>
+        </SinglePaneContent>
+      </SinglePaneFrame>
+    </Layout>
   )
 }
 

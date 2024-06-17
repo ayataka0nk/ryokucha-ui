@@ -9,6 +9,7 @@ export type PageKey =
   | 'Search'
   | 'TextField'
   | 'TimePicker'
+  | 'DoublePane'
 
 export const pages: {
   [key in PageKey]: string
@@ -20,7 +21,8 @@ export const pages: {
   Dialog: '/dialog',
   Search: '/search',
   TextField: '/textfield',
-  TimePicker: '/timepicker'
+  TimePicker: '/timepicker',
+  DoublePane: '/doublepane'
 }
 
 export const getPageKeyFromPath = (path: string): PageKey => {
@@ -79,6 +81,12 @@ export const getNavigationItems = ({ pageKey }: { pageKey: PageKey }) => {
       labelText: 'TimePicker',
       href: pages.TimePicker,
       active: pageKey === 'TimePicker'
+    },
+    {
+      icon: 'RectangleGroup',
+      labelText: 'DoublePane',
+      href: pages.DoublePane,
+      active: pageKey === 'DoublePane'
     }
   ]
   return items

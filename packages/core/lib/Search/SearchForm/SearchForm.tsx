@@ -3,11 +3,12 @@ import { useSearchFormState } from './useSearchFormState'
 import { SearchField } from '../SearchField'
 import { HistoryItem } from '../ViewItems/HistoryItem'
 import { InputValueItem } from '../ViewItems/InputValueItem'
+import styles from './styles.module.scss'
 
 type Props = {
   className?: string
   name: string
-  placeholder: string
+  placeholder?: string
   searchedValue: string
   historyKey: string
   onMenuClick: () => void
@@ -40,8 +41,13 @@ export const SearchForm = ({
     const formData = new FormData(ref.current)
     onSubmit && onSubmit(formData)
   }
+  //TODO SearchFormのfixedやstickyを選択式にする。
   return (
-    <form ref={ref} className={`${className}`} onSubmit={handleSubmit}>
+    <form
+      ref={ref}
+      className={`${styles['search-form']} ${className}`}
+      onSubmit={handleSubmit}
+    >
       <div ref={state.wrapperRef}>
         <SearchField
           name={name}
@@ -73,7 +79,11 @@ export const SearchForm = ({
           ))}
           {children}
         </SearchField>
-        <button ref={state.buttonRef} className="hidden" type="submit"></button>
+        <button
+          className={styles['hidden-button']}
+          ref={state.buttonRef}
+          type="submit"
+        ></button>
       </div>
     </form>
   )

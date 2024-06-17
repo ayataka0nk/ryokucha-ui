@@ -1,1 +1,1 @@
-export * from './SinglePaneLayout'
+export * from './SinglePane/SinglePaneFrame'
