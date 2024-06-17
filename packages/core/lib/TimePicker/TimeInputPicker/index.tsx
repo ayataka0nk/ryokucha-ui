@@ -83,6 +83,7 @@ export const TimeInputPicker = forwardRef<
         <div className={styles['tools']}>
           <IconButton
             icon="Clock"
+            type='button'
             className={styles['clock-icon']}
             onKeyDown={handleKeyDownStopEvent}
           />
