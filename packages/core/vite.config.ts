@@ -3,12 +3,20 @@ import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react'
 import { dependencies } from './package.json'
-
+function addUseClient() {
+  return {
+    name: 'add-use-client',
+    renderChunk(code: any) {
+      return `'use client';\n${code}`
+    }
+  }
+}
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    dts({ include: ['./lib', './src/vite-env.d.ts'], insertTypesEntry: true })
+    dts({ include: ['./lib', './src/vite-env.d.ts'], insertTypesEntry: true }),
+    addUseClient()
   ],
   css: {
     modules: {

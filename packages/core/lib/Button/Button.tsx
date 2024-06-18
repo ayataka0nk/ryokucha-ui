@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { ButtonProps, ButtonVariant } from './types'
 import { FilledButton } from './FilledButton'

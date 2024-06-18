@@ -10,10 +10,12 @@
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./breakpoints.scss": "./lib/breakpoints.scss"
   },
   "files": [
-    "dist"
+    "./dist",
+    "./lib/breakpoints.scss"
   ],
   "scripts": {
     "dev": "vite",
