@@ -1,10 +1,11 @@
-import { ExtendedFAB, FAB } from '@/Button'
-import { Button, NavigationTopAppBar, SinglePaneFrame } from '@/index'
+import { Button, ExtendedFAB, FAB } from '@/Button'
 import { ViewLine } from '../../common/ViewLine'
 import { ViewBox } from '../../common/ViewBox'
 import { Logo } from '../../layout/UserNavigation/Logo'
 import { Layout } from '../../layout/Layout'
 import { SinglePaneContent } from '@/Layout/SinglePane/SinglePaneContent'
+import { SinglePaneFrame } from '@/Layout'
+import { NavigationTopAppBar } from '@/Navigation'
 
 export const ButtonPage = () => {
   return (

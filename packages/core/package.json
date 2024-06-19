@@ -4,11 +4,6 @@
   "type": "module",
   "author": "ayataka0nk",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
-    },
     "./AppBar": {
       "import": "./dist/AppBar/index.js",
       "types": "./dist/AppBar/index.d.ts"
@@ -60,6 +55,9 @@
     "./TimePicker": {
       "import": "./dist/TimePicker/index.js",
       "types": "./dist/TimePicker/index.d.ts"
+    },
+    "./types": {
+      "types": "./dist/exportType.d.ts"
     },
     "./style.css": "./dist/style.css",
     "./breakpoints.scss": "./lib/breakpoints.scss",
