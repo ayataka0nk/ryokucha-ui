@@ -1,6 +1,6 @@
-import { Button } from "@ryokucha-ui/core/Button";
-import { TextField } from "@ryokucha-ui/core/TextField";
-import { TimeField } from "@ryokucha-ui/core/TimePicker";
+import { Button } from "@ayataka0nk/ryokucha-ui/Button";
+import { TextField } from "@ayataka0nk/ryokucha-ui/TextField";
+import { TimeField } from "@ayataka0nk/ryokucha-ui/TimePicker";
 
 export const Hoge = () => {
   return (

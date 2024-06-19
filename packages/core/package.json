@@ -1,9 +1,13 @@
 {
   "name": "@ayataka0nk/ryokucha-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "author": "ayataka0nk",
   "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
     "./AppBar": {
       "import": "./dist/AppBar/index.js",
       "types": "./dist/AppBar/index.d.ts"

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "@ryokucha-ui/core/style.css";
-import "@ryokucha-ui/core/theme.css";
+import "@ayataka0nk/ryokucha-ui/style.css";
+import "@ayataka0nk/ryokucha-ui/theme.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

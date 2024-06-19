@@ -21,15 +21,18 @@ export const useNavigationContext = () => {
   return context
 }
 
+export type NavigationContextProps = Pick<
+  NavigationContextValue,
+  'linkPropName' | 'LinkComponent'
+>
+
 export const NavigationContextProvider = ({
   children,
   linkPropName,
   LinkComponent
 }: {
   children: React.ReactNode
-  linkPropName: string
-  LinkComponent: React.ForwardRefExoticComponent<any>
-}) => {
+} & NavigationContextProps) => {
   const [isDrawerModalOpen, setIsDrawerModalOpen] = React.useState(false)
   return (
     <NavigationContext.Provider

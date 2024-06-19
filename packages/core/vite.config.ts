@@ -33,10 +33,12 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: {
+        index: path.resolve(__dirname, 'lib/index.tsx'),
         globalStyle: path.resolve(__dirname, 'lib/globalStyle.ts'),
         AppBar: path.resolve(__dirname, 'lib/AppBar/index.tsx'),
         Button: path.resolve(__dirname, 'lib/Button/index.tsx'),
         Card: path.resolve(__dirname, 'lib/Card/index.tsx'),
+        Context: path.resolve(__dirname, 'lib/Context/index.tsx'),
         DatePicker: path.resolve(__dirname, 'lib/DatePicker/index.tsx'),
         Dialog: path.resolve(__dirname, 'lib/Dialog/index.tsx'),
         Icon: path.resolve(__dirname, 'lib/Icon/index.tsx'),
@@ -50,13 +52,15 @@ export default defineConfig({
       },
       name: 'index',
       formats: ['es'],
-      fileName: (format, entryName) => `${entryName}/index.js`
+      fileName: (format, entryName) =>
+        entryName === 'index' ? 'index.js' : `${entryName}/index.js`
     },
     rollupOptions: {
       output: {
         banner: (chunk) => {
           if (
             [
+              'Context',
               'DatePicker',
               'Dialog',
               'Navigation',
