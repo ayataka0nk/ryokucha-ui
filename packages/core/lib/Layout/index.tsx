@@ -1,1 +1,2 @@
-export * from './SinglePane/SinglePaneFrame'
+export * from './SinglePane'
+export * from './DoublePane'

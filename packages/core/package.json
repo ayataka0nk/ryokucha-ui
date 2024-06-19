@@ -1,7 +1,6 @@
 {
-  "name": "@ryokucha-ui/core",
-  "private": true,
-  "version": "0.0.1",
+  "name": "@ayataka0nk/ryokucha-ui",
+  "version": "0.1.0",
   "type": "module",
   "author": "ayataka0nk",
   "exports": {
@@ -10,8 +9,61 @@
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
     },
+    "./AppBar": {
+      "import": "./dist/AppBar/index.js",
+      "types": "./dist/AppBar/index.d.ts"
+    },
+    "./Button": {
+      "import": "./dist/Button/index.js",
+      "types": "./dist/Button/index.d.ts"
+    },
+    "./Card": {
+      "import": "./dist/Card/index.js",
+      "types": "./dist/Card/index.d.ts"
+    },
+    "./DatePicker": {
+      "import": "./dist/DatePicker/index.js",
+      "types": "./dist/DatePicker/index.d.ts"
+    },
+    "./Dialog": {
+      "import": "./dist/Dialog/index.js",
+      "types": "./dist/Dialog/index.d.ts"
+    },
+    "./Icon": {
+      "import": "./dist/Icon/index.js",
+      "types": "./dist/Icon/index.d.ts"
+    },
+    "./IconButton": {
+      "import": "./dist/IconButton/index.js",
+      "types": "./dist/IconButton/index.d.ts"
+    },
+    "./Layout": {
+      "import": "./dist/Layout/index.js",
+      "types": "./dist/Layout/index.d.ts"
+    },
+    "./List": {
+      "import": "./dist/List/index.js",
+      "types": "./dist/List/index.d.ts"
+    },
+    "./Navigation": {
+      "import": "./dist/Navigation/index.js",
+      "types": "./dist/Navigation/index.d.ts"
+    },
+    "./Search": {
+      "import": "./dist/Search/index.js",
+      "types": "./dist/Search/index.d.ts"
+    },
+    "./TextField": {
+      "import": "./dist/TextField/index.js",
+      "types": "./dist/TextField/index.d.ts"
+    },
+    "./TimePicker": {
+      "import": "./dist/TimePicker/index.js",
+      "types": "./dist/TimePicker/index.d.ts"
+    },
     "./style.css": "./dist/style.css",
-    "./breakpoints.scss": "./lib/breakpoints.scss"
+    "./breakpoints.scss": "./lib/breakpoints.scss",
+    "./theme.css": "./lib/theme.css"
   },
   "files": [
     "./dist",
@@ -39,6 +91,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "glob": "^10.4.2",
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.4",
     "typescript": "^5.4.5",

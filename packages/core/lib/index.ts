@@ -1,6 +1,3 @@
-import './reset.css'
-import './global.css'
-
 export * from './types'
 
 export * from './AppBar'

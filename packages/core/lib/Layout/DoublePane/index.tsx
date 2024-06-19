@@ -1,3 +1,3 @@
+export { DoublePaneFrame } from './DoublePaneFrame'
 export { FirstPane } from './FirstPane'
 export { SecondPane } from './SecondPane'
-export { DoublePaneFrame } from './DoublePaneFrame'
